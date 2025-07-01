@@ -42,7 +42,7 @@ function Profile({ name, profession, awardsCount, awards, discovered, imgID }) {
 
 
 
-export default function Gallery() {
+function Gallery() {
   return (
     <div>
       <h1>Notable Scientists</h1>
