@@ -6,7 +6,7 @@ function getImageUrl(imageId, size = 's') {
     '.jpg'
   );
 }
-function Profile({ id, name, profession, awardsCount, awards, discovered, imgID }) {
+function Profile({ name, profession, awardsCount, awards, discovered, imgID }) {
   return (
     <section>
       <h2>{name}</h2>
@@ -25,12 +25,9 @@ function Profile({ id, name, profession, awardsCount, awards, discovered, imgID 
         <li>
           <b>Awards: {awardsCount} </b>
           (
-          {awards.map((award, index) => (
-            <span key={award}>
-              {award}
-              {index + 1 !== awards.length ? ', ' : ''}
-            </span>
-          ))}
+            {
+              awards.join(', ')
+            }
           )
         </li>
         <li>
@@ -42,46 +39,34 @@ function Profile({ id, name, profession, awardsCount, awards, discovered, imgID 
   );
 }
 
-const Scientists = [
-  {
-    id:1,
-    name: 'Maria Skłodowska-Curie',
-    profession: 'physicist and chemist',
-    awardsCount: 4,
-    awards: [
-      'Nobel Prize in Physics',
-      'Nobel Prize in Chemistry',
-      'Davy Medal',
-      'Matteucci Medal'
-    ],
-    discovered: 'polonium (chemical element)',
-    imgID: 'szV5sdG'
-  },
-  {
-    id:2,
-    name: 'Katsuko Saruhashi',
-    profession: 'geochemist',
-    awardsCount: 2,
-    awards: [
-      'Miyake Prize for geochemistry',
-      'Tanaka Prize'
-    ],
-    discovered: 'a method for measuring carbon dioxide in seawater',
-    imgID: 'YfeOqp2'
-  }
-];
+
 
 
 export default function Gallery() {
   return (
-    <>
-      {Scientists.map(Scientist => {
-        return (
-          <>
-          <Profile key={Scientist.id} {...Scientist} />
-          </>
-        )
-      })}
-    </>
+    <div>
+      <h1>Notable Scientists</h1>
+      <Profile
+        name='Maria Skłodowska-Curie'
+        profession='physicist and chemist'
+        awardsCount='4'
+        awards={[
+          'Nobel Prize in Physics',
+          'Nobel Prize in Chemistry',
+          'Davy Medal',
+          'Matteucci Medal'
+        ]}
+        discovered='polonium (chemical element)'
+        imgID='szV5sdG' />
+      <Profile name='Katsuko Saruhashi'
+        profession='geochemist'
+        awardsCount='2'
+        awards={[
+          'Miyake Prize for geochemistry',
+          'Tanaka Prize'
+        ]}
+        discovered='a method for measuring carbon dioxide in seawater'
+        imgID='YfeOqp2' />
+    </div>
   );
 }
