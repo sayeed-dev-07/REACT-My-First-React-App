@@ -1,9 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Form from './Form'
+import FeedbackForm from './FeedBackForm'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Form />
+    <FeedbackForm />
   </StrictMode>,
 )

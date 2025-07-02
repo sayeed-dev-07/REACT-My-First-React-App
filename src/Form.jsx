@@ -10,11 +10,9 @@ export default function Form() {
 
     function handleFirstNameChange(e) {
         setfirstName(e.target.value)
-        
     }
 
     function handleLastNameChange(e) {
-        
         setLastName(e.target.value)
     }
 
