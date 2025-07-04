@@ -8,6 +8,6 @@ import SyncedInputs from './App3'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <SyncedInputs />
+    <Person />
   </StrictMode>,
 )
